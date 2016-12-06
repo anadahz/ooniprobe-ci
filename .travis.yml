@@ -1,19 +1,12 @@
 matrix:
     include:
-        - os: linux
-          env: TARGET=debian-jessie
-        - os: linux
-          env: TARGET=debian-testing
-        - os: linux
-          env: TARGET=debian-unstable
-        - os: linux
-          env: TARGET=ubuntu-trusty
-        - os: linux
-          env: TARGET=ubuntu-xenial
-        - os: linux
-          env: TARGET=ubuntu-yakkety
-        - os: linux
-          env: TARGET=debian-pip
+        - env: TARGET=debian-jessie
+        - env: TARGET=debian-testing
+        - env: TARGET=debian-unstable
+        - env: TARGET=ubuntu-trusty
+        - env: TARGET=ubuntu-xenial
+        - env: TARGET=ubuntu-yakkety
+        - env: TARGET=debian-pip
         - os: osx
           osx_image: xcode6.4
         - os: osx
