@@ -31,3 +31,9 @@ case "$OS_NAME" in
 
         docker build -t ooniprobe/$TARGET -f $DOCKERFILE .
         docker run ooniprobe/$TARGET /ooniprobe/run.sh
+        ;;
+    *)
+        echo "Invalid or unsupported operating system ${OS_NAME}"
+        exit 1
+        ;;
+   esac
