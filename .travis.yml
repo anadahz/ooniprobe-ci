@@ -6,8 +6,17 @@ env:
 - TARGET=ubuntu-xenial
 - TARGET=ubuntu-yakkety
 - TARGET=debian-pip
+- OSX_VERSION=xcode6.4
+- OSX_VERSION=xcode7.3
+- OSX_VERSION=xcode8
+- OSX_VERSION=xcode8.1
+- OSX_VERSION=xcode8.2
+
+- os: osx
+  osx_image: $OSX_VERSION
+
 sudo: required
 services:
 - docker
 script:
-- ./build-and-run.sh $TARGET
+- ./build-and-run.sh $TARGET $TRAVIS_OS_NAME
