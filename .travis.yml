@@ -1,8 +1,9 @@
 os:
-  - linux
-    services:
+   - linux
+   - osx
+
+services:
     - docker
-  - osx
 
 matrix:
   include:
