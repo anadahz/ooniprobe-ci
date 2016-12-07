@@ -1,15 +1,19 @@
+os:
+  - linux
+    services:
+    - docker
+  - osx
+
 matrix:
   include:
-    - os: linux
-      services:
-      - docker
-      env: TARGET=debian-jessie
-      env: TARGET=debian-testing
-      env: TARGET=debian-unstable
-      env: TARGET=ubuntu-trusty
-      env: TARGET=ubuntu-xenial
-      env: TARGET=ubuntu-yakkety
-      env: TARGET=debian-pip
+    - env: TARGET=debian-jessie
+    - env: TARGET=debian-testing
+    - env: TARGET=debian-unstable
+    - env: TARGET=ubuntu-trusty
+    - env: TARGET=ubuntu-xenial
+    - env: TARGET=ubuntu-yakkety
+    - env: TARGET=debian-pip
+  exclude:
     - os: osx
 
 sudo: required
