@@ -1,25 +1,25 @@
 matrix:
     include:
         - os: linux
-          disto: trusty
+          dist: trusty
           env: TARGET=debian-jessie
         - os: linux
-          disto: trusty
+          dist: trusty
           env: TARGET=debian-testing
         - os: linux
-          disto: trusty
+          dist: trusty
           env: TARGET=debian-unstable
         - os: linux
-          disto: trusty
+          dist: trusty
           env: TARGET=ubuntu-trusty
         - os: linux
-          disto: trusty
+          dist: trusty
           env: TARGET=ubuntu-xenial
         - os: linux
-          disto: trusty
+          dist: trusty
           env: TARGET=ubuntu-yakkety
         - os: linux
-          disto: trusty
+          dist: trusty
           env: TARGET=debian-pip
         - os: osx
 
