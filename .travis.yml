@@ -1,22 +1,23 @@
-os:
-   - linux
-   - osx
-
-services:
-    - docker
-
 matrix:
-  include:
-    - env: TARGET=debian-jessie
-    - env: TARGET=debian-testing
-    - env: TARGET=debian-unstable
-    - env: TARGET=ubuntu-trusty
-    - env: TARGET=ubuntu-xenial
-    - env: TARGET=ubuntu-yakkety
-    - env: TARGET=debian-pip
-  exclude:
-    - os: osx
+    include:
+        - os: linux
+          env: TARGET=debian-jessie
+        - os: linux
+          env: TARGET=debian-testing
+        - os: linux
+          env: TARGET=debian-unstable
+        - os: linux
+          env: TARGET=ubuntu-trusty
+        - os: linux
+          env: TARGET=ubuntu-xenial
+        - os: linux
+          env: TARGET=ubuntu-yakkety
+        - os: linux
+          env: TARGET=debian-pip
+        - os: osx
 
 sudo: required
+services:
+- docker
 script:
 - ./build-and-run.sh $TARGET $TRAVIS_OS_NAME
