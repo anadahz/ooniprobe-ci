@@ -1,23 +1,21 @@
-matrix:
-    include:
-        - os: linux
-          services:
-          - docker
-          env:
-          - TARGET=debian-jessie
-          - TARGET=debian-testing
-          - TARGET=debian-unstable
-          - TARGET=ubuntu-trusty
-          - TARGET=ubuntu-xenial
-          - TARGET=ubuntu-yakkety
-          - TARGET=debian-pip
-        - os: osx
-          osx_image:
-          - xcode6.4
-          - xcode7.3
-          - xcode8
-          - xcode8.1
-          - xcode8.2
+env:
+  matrix:
+  - TARGET=debian-jessie
+  - TARGET=debian-testing
+  - TARGET=debian-unstable
+  - TARGET=ubuntu-trusty
+  - TARGET=ubuntu-xenial
+  - TARGET=ubuntu-yakkety
+  - TARGET=debian-pip
+
+- os: linux
+  services:
+  - docker
+- os: osx
+
+- matrix:
+    exclude:
+    - os: osx
 
 sudo: required
 script:
