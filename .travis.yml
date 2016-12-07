@@ -27,4 +27,4 @@ sudo: required
 services:
 - docker
 script:
-- ./build-and-run.sh $TARGET $TRAVIS_OS_NAME
+- ./build-and-run.sh ${TRAVIS_OS_NAME} ${TARGET}
