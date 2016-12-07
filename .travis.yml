@@ -1,12 +1,39 @@
-env:
-- TARGET=debian-jessie
-- TARGET=debian-testing
-- TARGET=debian-unstable
-- TARGET=ubuntu-trusty
-- TARGET=ubuntu-xenial
-- TARGET=ubuntu-yakkety
+matrix:
+    include:
+        - os: linux
+          dist: trusty
+          env: TARGET=debian-jessie
+        - os: linux
+          dist: trusty
+          env: TARGET=debian-testing
+        - os: linux
+          dist: trusty
+          env: TARGET=debian-unstable
+        - os: linux
+          dist: trusty
+          env: TARGET=ubuntu-trusty
+        - os: linux
+          dist: trusty
+          env: TARGET=ubuntu-xenial
+        - os: linux
+          dist: trusty
+          env: TARGET=ubuntu-yakkety
+        - os: linux
+          dist: trusty
+          env: TARGET=debian-pip
+        - os: osx
+          osx_image: xcode6.4
+        - os: osx
+          osx_image: xcode7.3
+        - os: osx
+          osx_image: xcode8
+        - os: osx
+          osx_image: xcode8.1
+        - os: osx
+          osx_image: xcode8.2
+
 sudo: required
 services:
 - docker
 script:
-- ./build-and-run.sh $TARGET
+- ./build-and-run.sh ${TRAVIS_OS_NAME} ${TARGET}
